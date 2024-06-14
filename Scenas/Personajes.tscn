@@ -1,0 +1,257 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8543rs3o0f6n"]
+
+[ext_resource type="Texture2D" uid="uid://b1i47mpg22otk" path="res://Nuevo/Nuevo/Oficina/Chloe.png" id="1_faddp"]
+[ext_resource type="Script" path="res://Scripts/Personajes/Personajes.gd" id="1_xyt7j"]
+[ext_resource type="Texture2D" uid="uid://b7bkllbuggn7b" path="res://Nuevo/Nuevo/Oficina/Joan.png" id="2_njiqk"]
+[ext_resource type="Texture2D" uid="uid://bdkubqvuuswrj" path="res://Nuevo/Nuevo/Oficina/Manbru.png" id="3_nbbe0"]
+[ext_resource type="Texture2D" uid="uid://cg2uwm1ki5aol" path="res://Nuevo/Nuevo/Oficina/Nani.png" id="4_r34o0"]
+[ext_resource type="Texture2D" uid="uid://e8g2v7m01gj0" path="res://Nuevo/Nuevo/Oficina/Sana.png" id="5_v87vi"]
+
+[sub_resource type="Animation" id="Animation_higep"]
+resource_name = "Llega"
+length = 0.65
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Npcs:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(91, 1), Vector2(-146, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Npcs/Chloe:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Npcs/Joan:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Npcs/Manbru:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Npcs/Nani:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Npcs/Sana:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Npcs:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_k1fjd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Npcs:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-146, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Npcs:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xsrh7"]
+resource_name = "SeVa"
+length = 0.65
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Npcs:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-146, 1), Vector2(91, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Npcs/Sana:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Npcs/Nani:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Npcs/Manbru:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Npcs/Joan:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Npcs/Chloe:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Npcs:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lq24l"]
+_data = {
+"Llega": SubResource("Animation_higep"),
+"RESET": SubResource("Animation_k1fjd"),
+"SeVa": SubResource("Animation_xsrh7")
+}
+
+[node name="Npc" type="Node2D"]
+script = ExtResource("1_xyt7j")
+
+[node name="Npcs" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-146, 1)
+scale = Vector2(1.32, 1.32)
+metadata/_edit_group_ = true
+
+[node name="Chloe" type="Sprite2D" parent="Npcs"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_faddp")
+
+[node name="Joan" type="Sprite2D" parent="Npcs"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_njiqk")
+
+[node name="Manbru" type="Sprite2D" parent="Npcs"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_nbbe0")
+
+[node name="Nani" type="Sprite2D" parent="Npcs"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_r34o0")
+
+[node name="Sana" type="Sprite2D" parent="Npcs"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_v87vi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lq24l")
+}
+
+[node name="Chloe2" type="Sprite2D" parent="."]
+position = Vector2(-146, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_faddp")

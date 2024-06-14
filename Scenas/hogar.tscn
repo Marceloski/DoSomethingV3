@@ -1,0 +1,189 @@
+[gd_scene load_steps=25 format=3 uid="uid://p1pal4dl1tbd"]
+
+[ext_resource type="Texture2D" uid="uid://cs77xvvdp0vua" path="res://Nuevo/Nuevo/Casa/el sentado.png" id="1_jtw00"]
+[ext_resource type="Script" path="res://Scripts/Hogar/hogar.gd" id="1_mkn6h"]
+[ext_resource type="Texture2D" uid="uid://ce410ngf7ua3x" path="res://Casa/sketch1707923294641.png" id="1_vkrwh"]
+[ext_resource type="Texture2D" uid="uid://bcdlilqbht3qs" path="res://Casa/sketch1710813692953.png" id="2_hfcgm"]
+[ext_resource type="Texture2D" uid="uid://dohlgp6hmfac4" path="res://Nuevo/Nuevo/Casa/ella sentado.png" id="2_ievec"]
+[ext_resource type="Texture2D" uid="uid://c3xck85673jps" path="res://Nuevo/Nuevo/Casa/niño.png" id="3_e8k2g"]
+[ext_resource type="Script" path="res://Scripts/Hogar/Jugador.gd" id="4_dpxa4"]
+[ext_resource type="Texture2D" uid="uid://d0gqtv2ev0mtc" path="res://Casa/sketch1707923670512.png" id="5_2o3t6"]
+[ext_resource type="Texture2D" uid="uid://lymttr88a873" path="res://Casa/sketch1707923731963.png" id="6_l02fb"]
+[ext_resource type="Texture2D" uid="uid://ciqmfjepfstsj" path="res://Casa/sketch1710813572183.png" id="7_y5isj"]
+[ext_resource type="Texture2D" uid="uid://bcogeva2p8p6i" path="res://Casa/sketch1710813621120.png" id="8_gbued"]
+[ext_resource type="Texture2D" uid="uid://4dgl2e0pmdbj" path="res://Casa/sketch1710813636348.png" id="9_ixsvh"]
+[ext_resource type="Texture2D" uid="uid://bsv0r6o7rwb4" path="res://Casa/sketch1707923769106.png" id="10_i3hbi"]
+[ext_resource type="Texture2D" uid="uid://8kn11k2vn15b" path="res://Casa/sketch1707923692816.png" id="12_b88cr"]
+[ext_resource type="Texture2D" uid="uid://42lmk2yts524" path="res://Nuevo/Nuevo/Casa/corazon 5.png" id="13_yue34"]
+[ext_resource type="Texture2D" uid="uid://dru60c78uxg86" path="res://Nuevo/Nuevo/Casa/corazon 4.png" id="14_nvkqk"]
+[ext_resource type="Texture2D" uid="uid://b71fbmpqgb2uy" path="res://Nuevo/Nuevo/Casa/corazon 3.png" id="15_cxye1"]
+[ext_resource type="Texture2D" uid="uid://cfpl6nhl6ccu6" path="res://Nuevo/Nuevo/Casa/corazon 2.png" id="16_h8rai"]
+[ext_resource type="Texture2D" uid="uid://r0shwnnniqwb" path="res://Nuevo/Nuevo/Casa/corazon 1.png" id="17_nogx7"]
+[ext_resource type="PackedScene" uid="uid://c46lskuq1f43n" path="res://Scenas/notas.tscn" id="18_pdmte"]
+[ext_resource type="Texture2D" uid="uid://vykk6qji1pc5" path="res://Nuevo/Nuevo/Casa/boton touch.png" id="20_2iq71"]
+
+[sub_resource type="Animation" id="Animation_cmpoi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7lmbb"]
+resource_name = "aparecer"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ln63d"]
+_data = {
+"RESET": SubResource("Animation_cmpoi"),
+"aparecer": SubResource("Animation_7lmbb")
+}
+
+[node name="Hogar" type="Node2D"]
+script = ExtResource("1_mkn6h")
+
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(576, 346)
+scale = Vector2(0.575625, 0.575625)
+texture = ExtResource("1_vkrwh")
+
+[node name="FondoRelleno" type="Sprite2D" parent="."]
+position = Vector2(575.917, 346.25)
+scale = Vector2(0.575417, 0.575417)
+texture = ExtResource("2_hfcgm")
+
+[node name="Jugador" type="Node2D" parent="."]
+position = Vector2(-541, 49)
+script = ExtResource("4_dpxa4")
+
+[node name="H" type="Sprite2D" parent="Jugador"]
+visible = false
+position = Vector2(1084, 346)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_jtw00")
+
+[node name="M" type="Sprite2D" parent="Jugador"]
+visible = false
+position = Vector2(1084, 346)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ievec")
+
+[node name="Casa2" type="Node2D" parent="."]
+
+[node name="Parte frontal sofa" type="Sprite2D" parent="Casa2"]
+position = Vector2(581, 349)
+scale = Vector2(0.573646, 0.573646)
+texture = ExtResource("5_2o3t6")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Casa2"]
+position = Vector2(501, 400)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_l02fb")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Casa2"]
+position = Vector2(586, 348)
+scale = Vector2(0.588333, 0.588333)
+texture = ExtResource("7_y5isj")
+
+[node name="Alo de luz tv" type="Sprite2D" parent="Casa2"]
+position = Vector2(575, 339)
+scale = Vector2(0.573333, 0.573333)
+texture = ExtResource("8_gbued")
+metadata/_edit_lock_ = true
+
+[node name="Marcorelleno" type="Sprite2D" parent="Casa2"]
+position = Vector2(576.417, 345.75)
+scale = Vector2(0.57625, 0.57625)
+texture = ExtResource("9_ixsvh")
+
+[node name="Planta" type="Sprite2D" parent="Casa2"]
+position = Vector2(673, 376)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_b88cr")
+
+[node name="PufHijo" type="Sprite2D" parent="Casa2"]
+position = Vector2(501, 400)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_i3hbi")
+
+[node name="Hijo" type="Node2D" parent="."]
+
+[node name="Hijo1" type="Sprite2D" parent="Hijo"]
+position = Vector2(634, 318)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_e8k2g")
+
+[node name="cozaron" type="Node2D" parent="."]
+visible = false
+position = Vector2(1064, 58)
+scale = Vector2(0.2, 0.2)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D5" type="Sprite2D" parent="cozaron"]
+texture = ExtResource("13_yue34")
+
+[node name="Sprite2D4" type="Sprite2D" parent="cozaron"]
+texture = ExtResource("14_nvkqk")
+
+[node name="Sprite2D3" type="Sprite2D" parent="cozaron"]
+texture = ExtResource("15_cxye1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="cozaron"]
+texture = ExtResource("16_h8rai")
+
+[node name="Sprite2D" type="Sprite2D" parent="cozaron"]
+texture = ExtResource("17_nogx7")
+
+[node name="Notas" parent="." instance=ExtResource("18_pdmte")]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 956.0
+offset_top = 567.0
+offset_right = 1146.0
+offset_bottom = 642.0
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureButton"]
+position = Vector2(95, 37)
+scale = Vector2(0.206089, 0.206089)
+texture = ExtResource("20_2iq71")
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = -357.0
+offset_top = -148.0
+offset_right = 546.0
+offset_bottom = 216.0
+theme_override_font_sizes/font_size = 25
+text = "Ir a la oficina"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ln63d")
+}
+
+[connection signal="go" from="." to="Notas" method="_on_hogar_go"]
+[connection signal="aparece" from="Notas" to="." method="_on_notas_aparece"]
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

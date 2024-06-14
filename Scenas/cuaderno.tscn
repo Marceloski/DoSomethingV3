@@ -1,0 +1,127 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0oh02aokkxbr"]
+
+[ext_resource type="Script" path="res://Scripts/Cuaderno/Cuaderno.gd" id="1_ouwyu"]
+[ext_resource type="Texture2D" uid="uid://d3wfty4otb8i" path="res://Nuevo/Nuevo/Oficina/cuaderno.png" id="2_dlm77"]
+
+[sub_resource type="Animation" id="Animation_52mmn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cuaderno:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(586, -301)]
+}
+
+[sub_resource type="Animation" id="Animation_xcb43"]
+resource_name = "baja"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cuaderno:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(586, -301), Vector2(586, 315)]
+}
+
+[sub_resource type="Animation" id="Animation_fc5lv"]
+resource_name = "sube"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cuaderno:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(586, 315), Vector2(586, -301)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5eqei"]
+_data = {
+"RESET": SubResource("Animation_52mmn"),
+"baja": SubResource("Animation_xcb43"),
+"sube": SubResource("Animation_fc5lv")
+}
+
+[node name="Cuaderno" type="Node2D"]
+script = ExtResource("1_ouwyu")
+
+[node name="Cuaderno" type="Sprite2D" parent="."]
+position = Vector2(586, -301)
+scale = Vector2(0.601, 0.601)
+texture = ExtResource("2_dlm77")
+
+[node name="Resultados" type="Label" parent="Cuaderno"]
+offset_left = -48.2529
+offset_top = -294.509
+offset_right = 110.747
+offset_bottom = -252.509
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Resultados"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Ganancias" type="Label" parent="Cuaderno"]
+offset_left = -262.895
+offset_top = -173.045
+offset_right = 321.105
+offset_bottom = -131.045
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Ganancias"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Empleados" type="Label" parent="Cuaderno"]
+offset_left = -264.559
+offset_top = -118.136
+offset_right = 319.441
+offset_bottom = -76.1365
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Empleados"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Felicidad" type="Label" parent="Cuaderno"]
+offset_left = -267.887
+offset_top = -58.2363
+offset_right = 316.113
+offset_bottom = -16.2363
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Felicidad"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="Cuaderno"]
+offset_left = 209.651
+offset_top = 331.115
+offset_right = 342.651
+offset_bottom = 377.115
+text = "Ir a casa."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5eqei")
+}
+
+[connection signal="pressed" from="Cuaderno/Button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]

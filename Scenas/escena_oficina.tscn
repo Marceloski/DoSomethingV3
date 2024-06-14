@@ -1,0 +1,395 @@
+[gd_scene load_steps=33 format=3 uid="uid://hqvgjt5dvnxk"]
+
+[ext_resource type="Script" path="res://Scripts/Oficina/Main_oficina.gd" id="1_mpcls"]
+[ext_resource type="Texture2D" uid="uid://cq5tb3yb2j307" path="res://Oficina/sketch1704247249518.png" id="1_s6cfn"]
+[ext_resource type="PackedScene" uid="uid://htjnphw2dxiu" path="res://panel_victoria.tscn" id="2_s301m"]
+[ext_resource type="Texture2D" uid="uid://cr1thl56jcmdn" path="res://Oficina/sketch1704247207412.png" id="2_swbc6"]
+[ext_resource type="Texture2D" uid="uid://bv7pne2y3yx41" path="res://Oficina/sketch1704247267231.png" id="3_iic8y"]
+[ext_resource type="Texture2D" uid="uid://vtmq7ynwlvay" path="res://Oficina/sketch1704247296150.png" id="5_tx1kb"]
+[ext_resource type="Texture2D" uid="uid://dxat2wxjy24t5" path="res://Oficina/sketch1704247345325.png" id="6_wmusr"]
+[ext_resource type="Script" path="res://Scripts/Oficina/DialogosManager.gd" id="8_1ex3s"]
+[ext_resource type="Texture2D" uid="uid://dfyo8tp3jro4" path="res://sketch1710816424286.png" id="8_cbr7l"]
+[ext_resource type="FontVariation" uid="uid://dr78wllg6dqjc" path="res://Portada/Dial1.tres" id="9_u445o"]
+[ext_resource type="Texture2D" uid="uid://cp5esvm6yjs4a" path="res://Nuevo/Nuevo/Oficina/Marcadores.png" id="10_wy5jg"]
+[ext_resource type="Texture2D" uid="uid://btmkg2cctfu6j" path="res://Oficina/sketch1704247405312.png" id="11_dip8i"]
+[ext_resource type="Texture2D" uid="uid://cbqrqlphecpgb" path="res://Nuevo/moneda.png" id="11_h1vis"]
+[ext_resource type="Script" path="res://Scripts/Oficina/BotonSiguiente.gd" id="11_yh0m2"]
+[ext_resource type="Texture2D" uid="uid://ctidibxtjiipj" path="res://Nuevo/empleados.png" id="12_tofco"]
+[ext_resource type="Texture2D" uid="uid://c1fcmdd0csy8t" path="res://Oficina/sketch1704247394680.png" id="12_xl3qu"]
+[ext_resource type="Script" path="res://Scripts/Oficina/OficinaBoton.gd" id="13_xjcbt"]
+[ext_resource type="Texture2D" uid="uid://b2obb4n2as2ct" path="res://Nuevo/felicidad 3.png" id="13_y0has"]
+[ext_resource type="Script" path="res://Scripts/Tutorial/OpcionB.gd" id="14_hsj65"]
+[ext_resource type="Script" path="res://Scripts/Tutorial/OpcionC.gd" id="15_pasgw"]
+[ext_resource type="Texture2D" uid="uid://cmp36qug4erc6" path="res://Nuevo/Nuevo/Oficina/Captura-removebg-preview (1).png" id="16_o1ce5"]
+[ext_resource type="Script" path="res://Scripts/Oficina/Cheater.gd" id="17_k0wab"]
+[ext_resource type="Script" path="res://Scripts/Oficina/FelicidadCara.gd" id="22_qswg8"]
+[ext_resource type="Texture2D" uid="uid://cynco34lntpm4" path="res://Nuevo/felicidad 1.png" id="23_g56jp"]
+[ext_resource type="Texture2D" uid="uid://ed40d0mj4yja" path="res://Nuevo/felicidad 2.png" id="24_3ktvm"]
+[ext_resource type="PackedScene" uid="uid://c0oh02aokkxbr" path="res://Scenas/cuaderno.tscn" id="26_f20jx"]
+[ext_resource type="PackedScene" uid="uid://p1pal4dl1tbd" path="res://Scenas/hogar.tscn" id="27_74fkh"]
+[ext_resource type="PackedScene" uid="uid://b8543rs3o0f6n" path="res://Scenas/Personajes.tscn" id="27_o4m11"]
+[ext_resource type="AudioStream" uid="uid://dox60ds0m0yx2" path="res://Nuevo/Beneath-the-Mask-_152kbit_Opus_.mp3" id="29_wjml5"]
+[ext_resource type="Texture2D" uid="uid://dinrushjah7qh" path="res://Portada/conf..png" id="31_tqlb6"]
+[ext_resource type="PackedScene" uid="uid://c5rgod6xv4q68" path="res://Scenas/ajustes.tscn" id="32_gena1"]
+
+[sub_resource type="Theme" id="Theme_drdcr"]
+
+[node name="EscenaOficina" type="Node2D"]
+script = ExtResource("1_mpcls")
+
+[node name="Escenario" type="Node2D" parent="."]
+
+[node name="Celeste" type="Sprite2D" parent="Escenario"]
+position = Vector2(486, 330.331)
+scale = Vector2(0.312533, 0.522219)
+texture = ExtResource("1_s6cfn")
+
+[node name="Nubes" type="Sprite2D" parent="Escenario/Celeste"]
+position = Vector2(403.157, -117.443)
+scale = Vector2(1.21761, 0.771471)
+texture = ExtResource("2_swbc6")
+
+[node name="FondoOficina" type="Sprite2D" parent="Escenario/Celeste"]
+position = Vector2(291.169, -10.2084)
+scale = Vector2(1.83981, 1.03405)
+texture = ExtResource("3_iic8y")
+
+[node name="Npc" parent="Escenario/Celeste/FondoOficina" instance=ExtResource("27_o4m11")]
+position = Vector2(655.651, 105.555)
+scale = Vector2(1.73913, 1.85185)
+
+[node name="GatoOficina" type="Sprite2D" parent="Escenario/Celeste/FondoOficina"]
+position = Vector2(449.049, 25.846)
+scale = Vector2(1.56496, 1.73985)
+texture = ExtResource("6_wmusr")
+
+[node name="EscritorioySillaOficina" type="Sprite2D" parent="Escenario/Celeste/FondoOficina"]
+position = Vector2(55.2677, -31.3846)
+scale = Vector2(1.08808, 1.25692)
+texture = ExtResource("5_tx1kb")
+
+[node name="Marcadores" type="Sprite2D" parent="Escenario/Celeste/FondoOficina/EscritorioySillaOficina"]
+position = Vector2(-42.8019, 23.4962)
+scale = Vector2(0.939027, 0.822605)
+texture = ExtResource("10_wy5jg")
+
+[node name="MujerOficina" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(610, 323)
+scale = Vector2(0.60875, 0.6575)
+texture = ExtResource("12_xl3qu")
+
+[node name="HombreOficina" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(614, 330)
+scale = Vector2(0.617562, 0.629167)
+texture = ExtResource("11_dip8i")
+
+[node name="TextoNubes" type="Node2D" parent="."]
+script = ExtResource("8_1ex3s")
+
+[node name="NubeSecretaria" type="Sprite2D" parent="TextoNubes"]
+position = Vector2(484, 139)
+scale = Vector2(0.534385, 0.460833)
+texture = ExtResource("8_cbr7l")
+
+[node name="SusanaDialogo" type="Label" parent="TextoNubes/NubeSecretaria"]
+offset_left = -470.0
+offset_top = -159.0
+offset_right = 419.0
+offset_bottom = 186.0
+focus_mode = 2
+theme = SubResource("Theme_drdcr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Esta es tu oficina, Nuevo jefe, soy tu secretaria sana banana y te contare las eventualidades que sucedan en la oficina. Por ejemplo aqui abajo tenemos El dinero, este sirve para comprar o pagar cosas de las situaciones."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Consecuencia" type="Sprite2D" parent="TextoNubes"]
+position = Vector2(484, 139)
+scale = Vector2(0.534385, 0.460833)
+texture = ExtResource("8_cbr7l")
+
+[node name="ConsecuenciaDialogo" type="Label" parent="TextoNubes/Consecuencia"]
+offset_left = -470.0
+offset_top = -159.0
+offset_right = 419.0
+offset_bottom = 186.0
+focus_mode = 2
+theme = SubResource("Theme_drdcr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="LabelsStats" type="Node2D" parent="TextoNubes"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextoNubes/LabelsStats"]
+offset_left = 104.0
+offset_top = 502.0
+offset_right = 250.0
+offset_bottom = 632.0
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Moneda" type="Sprite2D" parent="TextoNubes/LabelsStats/VBoxContainer"]
+position = Vector2(-35, 30)
+scale = Vector2(0.102, 0.118)
+texture = ExtResource("11_h1vis")
+
+[node name="Dinero" type="Label" parent="TextoNubes/LabelsStats/VBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "$100"
+autowrap_mode = 2
+
+[node name="Empleados" type="Label" parent="TextoNubes/LabelsStats/VBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "10"
+autowrap_mode = 2
+
+[node name="Empleados2" type="Sprite2D" parent="TextoNubes/LabelsStats/VBoxContainer"]
+position = Vector2(-38, 88)
+scale = Vector2(0.10575, 0.1035)
+texture = ExtResource("12_tofco")
+
+[node name="Felicidad" type="Label" parent="TextoNubes/LabelsStats"]
+visible = false
+offset_left = 550.0
+offset_top = 585.0
+offset_right = 649.0
+offset_bottom = 652.0
+theme_override_font_sizes/font_size = 48
+
+[node name="Ganancias" type="Label" parent="TextoNubes/LabelsStats"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Siguiente" type="TextureButton" parent="."]
+offset_left = 936.0
+offset_top = 249.0
+offset_right = 1125.0
+offset_bottom = 326.0
+script = ExtResource("11_yh0m2")
+
+[node name="Siguiente" type="Sprite2D" parent="Siguiente"]
+position = Vector2(103, 37)
+scale = Vector2(0.2235, 0.227292)
+texture = ExtResource("16_o1ce5")
+
+[node name="Dial" type="Label" parent="Siguiente/Siguiente"]
+offset_left = -473.0
+offset_top = -53.0
+offset_right = 398.0
+offset_bottom = 227.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_u445o")
+theme_override_font_sizes/font_size = 100
+text = "Seguir"
+horizontal_alignment = 1
+autowrap_mode = 2
+justification_flags = 0
+
+[node name="Cheater" type="TextureButton" parent="."]
+visible = false
+offset_left = -87.0
+offset_top = 211.0
+offset_right = 102.0
+offset_bottom = 288.0
+script = ExtResource("17_k0wab")
+dinero = true
+
+[node name="Siguiente" type="Sprite2D" parent="Cheater"]
+position = Vector2(207, 46)
+scale = Vector2(0.2235, 0.227292)
+texture = ExtResource("8_cbr7l")
+
+[node name="Dial" type="Label" parent="Cheater/Siguiente"]
+offset_left = -487.696
+offset_top = -140.788
+offset_right = 383.304
+offset_bottom = 174.212
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_u445o")
+theme_override_font_sizes/font_size = 100
+text = "Cheater
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+justification_flags = 0
+
+[node name="Botones" type="Node2D" parent="."]
+
+[node name="OpcionA" type="TextureButton" parent="Botones"]
+offset_left = 917.0
+offset_top = 347.0
+offset_right = 1141.0
+offset_bottom = 430.0
+script = ExtResource("13_xjcbt")
+
+[node name="Opcion A" type="Sprite2D" parent="Botones/OpcionA"]
+position = Vector2(119, 39)
+scale = Vector2(0.243263, 0.237656)
+texture = ExtResource("8_cbr7l")
+metadata/_edit_group_ = true
+
+[node name="Dial" type="Label" parent="Botones/OpcionA/Opcion A"]
+offset_left = -453.29
+offset_top = -161.061
+offset_right = 417.71
+offset_bottom = 153.939
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_u445o")
+theme_override_font_sizes/font_size = 60
+text = "Opcion A"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+justification_flags = 0
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="OpcionB" type="TextureButton" parent="Botones"]
+offset_left = 910.0
+offset_top = 445.0
+offset_right = 1140.0
+offset_bottom = 541.0
+script = ExtResource("14_hsj65")
+
+[node name="Opcion B" type="Sprite2D" parent="Botones/OpcionB"]
+position = Vector2(123, 45)
+scale = Vector2(0.249763, 0.255156)
+texture = ExtResource("8_cbr7l")
+metadata/_edit_group_ = true
+
+[node name="Dial" type="Label" parent="Botones/OpcionB/Opcion B"]
+offset_left = -469.799
+offset_top = -162.786
+offset_right = 401.201
+offset_bottom = 152.214
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_u445o")
+theme_override_font_sizes/font_size = 60
+text = "Opcion B"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+justification_flags = 0
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="OpcionC" type="TextureButton" parent="Botones"]
+offset_left = 906.0
+offset_top = 549.0
+offset_right = 1143.0
+offset_bottom = 646.0
+script = ExtResource("15_pasgw")
+
+[node name="Opcion C" type="Sprite2D" parent="Botones/OpcionC"]
+position = Vector2(126, 46)
+scale = Vector2(0.250763, 0.250156)
+texture = ExtResource("8_cbr7l")
+metadata/_edit_group_ = true
+
+[node name="Dial" type="Label" parent="Botones/OpcionC/Opcion C"]
+offset_left = -469.799
+offset_top = -162.786
+offset_right = 401.201
+offset_bottom = 152.214
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_u445o")
+theme_override_font_sizes/font_size = 60
+text = "Opcion C"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+justification_flags = 0
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="Felicidad" type="Node2D" parent="."]
+script = ExtResource("22_qswg8")
+
+[node name="Felicidad1" type="Sprite2D" parent="Felicidad"]
+position = Vector2(298, 605)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("23_g56jp")
+
+[node name="Felicidad2" type="Sprite2D" parent="Felicidad"]
+position = Vector2(298, 605)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("24_3ktvm")
+
+[node name="Felicidad3" type="Sprite2D" parent="Felicidad"]
+position = Vector2(298, 605)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("13_y0has")
+
+[node name="Cuaderno" parent="." instance=ExtResource("26_f20jx")]
+
+[node name="Libreta" parent="." instance=ExtResource("2_s301m")]
+position = Vector2(-1, -67)
+
+[node name="Hogar" parent="." instance=ExtResource("27_74fkh")]
+visible = false
+
+[node name="Configuracion" type="TextureButton" parent="."]
+offset_left = -15.0
+offset_top = -4.0
+offset_right = 91.0
+offset_bottom = 95.0
+
+[node name="Configuracion" type="Sprite2D" parent="Configuracion"]
+position = Vector2(60.642, 58.046)
+scale = Vector2(0.148373, 0.168992)
+texture = ExtResource("31_tqlb6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("29_wjml5")
+autoplay = true
+
+[node name="Ajustes" parent="." instance=ExtResource("32_gena1")]
+offset_left = -15.0
+offset_top = -4.0
+offset_right = -15.0
+offset_bottom = -4.0
+
+[connection signal="animacionGo" from="TextoNubes" to="Escenario/Celeste/FondoOficina/Npc" method="_on_texto_nubes_animacion_go"]
+[connection signal="animacionGo" from="TextoNubes" to="Hogar" method="_on_texto_nubes_animacion_go"]
+[connection signal="baja" from="TextoNubes" to="Cuaderno" method="_on_texto_nubes_baja"]
+[connection signal="byebye" from="TextoNubes" to="Escenario/Celeste/FondoOficina/Npc" method="_on_texto_nubes_byebye"]
+[connection signal="ganar" from="TextoNubes" to="Libreta" method="_on_texto_nubes_ganar"]
+[connection signal="perder" from="TextoNubes" to="Libreta" method="_on_texto_nubes_perder"]
+[connection signal="mouse_entered" from="Siguiente" to="Siguiente" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Siguiente" to="Siguiente" method="_on_mouse_exited"]
+[connection signal="pressed" from="Siguiente" to="TextoNubes" method="_on_siguiente_pressed"]
+[connection signal="mouse_entered" from="Cheater" to="Cheater" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Cheater" to="Cheater" method="_on_mouse_exited"]
+[connection signal="pressed" from="Cheater" to="Cheater" method="_on_pressed"]
+[connection signal="mouse_entered" from="Botones/OpcionA" to="Botones/OpcionA" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Botones/OpcionA" to="Botones/OpcionA" method="_on_mouse_exited"]
+[connection signal="pressed" from="Botones/OpcionA" to="TextoNubes" method="_on_opcion_a_pressed"]
+[connection signal="mouse_entered" from="Botones/OpcionB" to="Botones/OpcionB" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Botones/OpcionB" to="Botones/OpcionB" method="_on_mouse_exited"]
+[connection signal="pressed" from="Botones/OpcionB" to="TextoNubes" method="_on_opcion_b_pressed"]
+[connection signal="mouse_entered" from="Botones/OpcionC" to="Botones/OpcionC" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Botones/OpcionC" to="Botones/OpcionC" method="_on_mouse_exited"]
+[connection signal="pressed" from="Botones/OpcionC" to="TextoNubes" method="_on_opcion_c_pressed"]
+[connection signal="ocultar" from="Cuaderno" to="Escenario/Celeste/FondoOficina/Npc" method="_on_cuaderno_ocultar"]
+[connection signal="revelar" from="Cuaderno" to="Escenario/Celeste/FondoOficina/Npc" method="_on_cuaderno_revelar"]
+[connection signal="sube" from="Cuaderno" to="TextoNubes" method="_on_cuaderno_sube"]
+[connection signal="sube" from="Cuaderno" to="Hogar" method="_on_cuaderno_sube"]
+[connection signal="subidaEnd" from="Cuaderno" to="TextoNubes" method="_on_cuaderno_subida_end"]
+[connection signal="animaciongo" from="Libreta" to="Escenario/Celeste/FondoOficina/Npc" method="_on_libreta_animaciongo"]
+[connection signal="reseteate" from="Libreta" to="TextoNubes" method="_on_libreta_reseteate"]
+[connection signal="ocultarhogar" from="Hogar" to="TextoNubes" method="_on_hogar_ocultarhogar"]
+[connection signal="pressed" from="Configuracion" to="." method="_on_configuracion_pressed"]

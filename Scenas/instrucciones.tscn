@@ -1,0 +1,125 @@
+[gd_scene load_steps=14 format=3 uid="uid://c8xitcjuulwyv"]
+
+[ext_resource type="Texture2D" uid="uid://cm6v00h3emfo3" path="res://Instrucciones/INST/sketch1710815650928.png" id="1_gjpgk"]
+[ext_resource type="Texture2D" uid="uid://ga5vjry4t6qp" path="res://Oficina/sketch1710816424286.png" id="2_1sbxo"]
+[ext_resource type="Texture2D" uid="uid://dss8iqc4xgnlk" path="res://Iconos/442449257_422475497374929_866747927653170011_n.png" id="4_rhpmx"]
+[ext_resource type="Texture2D" uid="uid://bmjguj6afncgk" path="res://Instrucciones/INST/sketch1710815575288.png" id="4_umy53"]
+[ext_resource type="Texture2D" uid="uid://bsj3ystfmiuei" path="res://Iconos/442686199_464551086131701_8107292857647018616_n.png" id="5_auwh5"]
+[ext_resource type="Script" path="res://Scripts/Instrucciones/BotonAtras.gd" id="5_laeky"]
+[ext_resource type="Texture2D" uid="uid://mxqtxhlwv6ht" path="res://Iconos/442428204_441816128445788_2175529106093000753_n.png" id="6_f5hx0"]
+[ext_resource type="Texture2D" uid="uid://d0qmoi2m0s5b0" path="res://Instrucciones/INST/sketch1710816048923.png" id="6_htngu"]
+[ext_resource type="Script" path="res://Scripts/Instrucciones/BotonJugar.gd" id="7_160x7"]
+[ext_resource type="PackedScene" uid="uid://ddnxqev1n7im4" path="res://Scenas/transicion.tscn" id="8_uxqng"]
+[ext_resource type="Texture2D" uid="uid://cynco34lntpm4" path="res://Nuevo/felicidad 1.png" id="11_sx4mo"]
+[ext_resource type="Texture2D" uid="uid://cbqrqlphecpgb" path="res://Nuevo/moneda.png" id="12_vydxy"]
+[ext_resource type="Texture2D" uid="uid://ctidibxtjiipj" path="res://Nuevo/empleados.png" id="13_f82a0"]
+
+[node name="Instrucciones" type="Node2D"]
+
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(576, 325)
+scale = Vector2(0.576, 0.541667)
+texture = ExtResource("1_gjpgk")
+
+[node name="UsaMouse2" type="Sprite2D" parent="Fondo"]
+position = Vector2(-534.722, -53.5385)
+scale = Vector2(0.324617, 0.335204)
+texture = ExtResource("2_1sbxo")
+
+[node name="UsaMouse" type="Sprite2D" parent="Fondo"]
+position = Vector2(-529.514, -232.615)
+scale = Vector2(0.338289, 0.325954)
+texture = ExtResource("2_1sbxo")
+
+[node name="Tusdes" type="Sprite2D" parent="Fondo"]
+position = Vector2(378.828, -124.074)
+scale = Vector2(0.845582, 0.766204)
+texture = ExtResource("4_umy53")
+
+[node name="B" type="Sprite2D" parent="Fondo"]
+position = Vector2(-260.417, -79.3846)
+scale = Vector2(0.807509, 0.66)
+texture = ExtResource("4_rhpmx")
+
+[node name="C" type="Sprite2D" parent="Fondo"]
+position = Vector2(-500, 103.385)
+scale = Vector2(0.811957, 0.789038)
+texture = ExtResource("5_auwh5")
+
+[node name="A" type="Sprite2D" parent="Fondo"]
+position = Vector2(-64.2362, -264)
+scale = Vector2(0.650825, 0.539231)
+texture = ExtResource("6_f5hx0")
+
+[node name="UsaMouse3" type="Sprite2D" parent="Fondo"]
+position = Vector2(-534.722, 118.154)
+scale = Vector2(0.324617, 0.335204)
+texture = ExtResource("2_1sbxo")
+
+[node name="Instrucciones" type="TextureButton" parent="."]
+offset_left = 58.864
+offset_top = 494.94
+offset_right = 214.864
+offset_bottom = 577.94
+script = ExtResource("5_laeky")
+
+[node name="BotonesAtras" type="Sprite2D" parent="Instrucciones"]
+position = Vector2(274.136, 371.06)
+scale = Vector2(0.564875, 0.661667)
+texture = ExtResource("6_htngu")
+hframes = 2
+
+[node name="BOTON DE ATRAS" type="Node" parent="Instrucciones"]
+
+[node name="JugarButon" type="TextureButton" parent="."]
+offset_left = 924.0
+offset_top = 496.0
+offset_right = 1119.0
+offset_bottom = 577.0
+script = ExtResource("7_160x7")
+
+[node name="BotonesJugar" type="Sprite2D" parent="JugarButon"]
+position = Vector2(-77.0001, 368)
+scale = Vector2(0.564875, 0.661667)
+texture = ExtResource("6_htngu")
+hframes = 2
+frame = 1
+
+[node name="Transicion" parent="." instance=ExtResource("8_uxqng")]
+position = Vector2(-42, -28)
+escenauno = "res://Scenas/seleccion_genero.tscn"
+escenados = "res://Scenas/menu.tscn"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 92.0
+offset_top = 31.0
+offset_right = 450.0
+offset_bottom = 151.0
+theme_override_font_sizes/font_size = 26
+text = "Clickea y toma desiciones, pero todo tendra consecuencias en tus recursos"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Felicidad1" type="Sprite2D" parent="."]
+position = Vector2(421, 550)
+scale = Vector2(0.248, 0.252)
+texture = ExtResource("11_sx4mo")
+
+[node name="Moneda" type="Sprite2D" parent="."]
+position = Vector2(567, 553)
+scale = Vector2(0.298, 0.304)
+texture = ExtResource("12_vydxy")
+
+[node name="Empleados" type="Sprite2D" parent="."]
+position = Vector2(704, 543)
+scale = Vector2(0.252, 0.23)
+texture = ExtResource("13_f82a0")
+
+[connection signal="mouse_entered" from="Instrucciones" to="Instrucciones" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Instrucciones" to="Instrucciones" method="_on_mouse_exited"]
+[connection signal="playdos" from="Instrucciones" to="Transicion" method="_on_instrucciones_playdos"]
+[connection signal="pressed" from="Instrucciones" to="Instrucciones" method="_on_pressed"]
+[connection signal="mouse_entered" from="JugarButon" to="JugarButon" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="JugarButon" to="JugarButon" method="_on_mouse_exited"]
+[connection signal="play" from="JugarButon" to="Transicion" method="_on_jugar_buton_play"]
+[connection signal="pressed" from="JugarButon" to="JugarButon" method="_on_pressed"]

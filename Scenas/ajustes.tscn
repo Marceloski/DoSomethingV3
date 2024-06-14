@@ -1,0 +1,115 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5rgod6xv4q68"]
+
+[ext_resource type="Script" path="res://Scenas/ajustes.gd" id="1_7cn53"]
+[ext_resource type="Texture2D" uid="uid://ga5vjry4t6qp" path="res://Oficina/sketch1710816424286.png" id="2_mayll"]
+
+[sub_resource type="Animation" id="Animation_bvrk7"]
+resource_name = "Bajada"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Opciones:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(501, -261), Vector2(501, 200)]
+}
+
+[sub_resource type="Animation" id="Animation_ovtu5"]
+resource_name = "Subida"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Opciones:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(501, 200), Vector2(501, -261)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_udsmd"]
+_data = {
+"Bajada": SubResource("Animation_bvrk7"),
+"Subida": SubResource("Animation_ovtu5")
+}
+
+[node name="Ajustes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7cn53")
+
+[node name="Opciones" type="Sprite2D" parent="."]
+position = Vector2(501, -261)
+scale = Vector2(0.5765, 0.738333)
+texture = ExtResource("2_mayll")
+
+[node name="Atras" type="Button" parent="Opciones"]
+offset_left = 111.0
+offset_top = 79.0
+offset_right = 216.0
+offset_bottom = 121.0
+text = "Atras"
+
+[node name="Nombres" type="VBoxContainer" parent="Opciones"]
+offset_left = -392.021
+offset_top = -39.2777
+offset_right = -142.021
+offset_bottom = 106.722
+theme_override_constants/separation = 11
+
+[node name="Audio" type="Label" parent="Opciones/Nombres"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Audio"
+
+[node name="Pantalla Completa" type="Label" parent="Opciones/Nombres"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Pantalla Completa"
+
+[node name="Slicers" type="VBoxContainer" parent="Opciones"]
+offset_left = -249.783
+offset_top = -77.2009
+offset_right = 189.217
+offset_bottom = 29.7991
+scale = Vector2(1, 1.27088)
+theme_override_constants/separation = 11
+alignment = 1
+
+[node name="Audio" type="HSlider" parent="Opciones/Slicers"]
+layout_mode = 2
+tick_count = 10
+
+[node name="CheckButton" type="CheckButton" parent="Opciones/Slicers"]
+layout_mode = 2
+button_mask = 3
+
+[node name="NombreOpciones" type="Label" parent="Opciones"]
+offset_left = -289.679
+offset_top = -139.503
+offset_right = -180.679
+offset_bottom = -113.503
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Opciones"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_udsmd")
+}
+
+[connection signal="pressed" from="Opciones/Atras" to="." method="_on_atras_pressed"]
+[connection signal="value_changed" from="Opciones/Slicers/Audio" to="." method="_on_audio_value_changed"]
+[connection signal="toggled" from="Opciones/Slicers/CheckButton" to="." method="_on_check_button_toggled"]

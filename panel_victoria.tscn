@@ -1,0 +1,173 @@
+[gd_scene load_steps=10 format=3 uid="uid://htjnphw2dxiu"]
+
+[ext_resource type="Script" path="res://panel_victoria.gd" id="1_m17jr"]
+[ext_resource type="Texture2D" uid="uid://dd5tc577611s7" path="res://Nuevo/Pantalla.png" id="2_musda"]
+[ext_resource type="Texture2D" uid="uid://cjk1maf4gn2oo" path="res://Nuevo/victoria.png" id="3_7t333"]
+[ext_resource type="Script" path="res://Scripts/Cuaderno/Reiniciar.gd" id="4_eml2x"]
+[ext_resource type="Texture2D" uid="uid://b3vltnq21c76b" path="res://Nuevo/derrota.png" id="5_lh0mf"]
+
+[sub_resource type="Animation" id="Animation_3k0nr"]
+resource_name = "Bajada"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cuaderno")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cuaderno:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 650)]
+}
+
+[sub_resource type="Animation" id="Animation_bpdy1"]
+resource_name = "Subida"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cuaderno")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cuaderno:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 650), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m882p"]
+resource_name = "Victoria"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wv5oe"]
+_data = {
+"Bajada": SubResource("Animation_3k0nr"),
+"Subida": SubResource("Animation_bpdy1"),
+"Victoria": SubResource("Animation_m882p")
+}
+
+[node name="Libreta" type="Node2D"]
+script = ExtResource("1_m17jr")
+
+[node name="Cuaderno" type="Node2D" parent="."]
+
+[node name="Victoria" type="Node2D" parent="Cuaderno"]
+
+[node name="Cuaderno" type="Sprite2D" parent="Cuaderno/Victoria"]
+position = Vector2(566, -257)
+scale = Vector2(0.432552, 0.451389)
+texture = ExtResource("2_musda")
+
+[node name="Label" type="Label" parent="Cuaderno/Victoria"]
+offset_left = 619.0
+offset_top = -427.0
+offset_right = 902.0
+offset_bottom = -355.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Has Surgido junto con tu Familia
+Y tu futuro esta claro y con exito"
+horizontal_alignment = 1
+
+[node name="Victoria" type="Sprite2D" parent="Cuaderno/Victoria"]
+position = Vector2(769, -200.25)
+scale = Vector2(0.345477, 0.327454)
+texture = ExtResource("3_7t333")
+
+[node name="Reiniciar" type="TextureButton" parent="Cuaderno/Victoria"]
+offset_left = 329.0
+offset_top = -128.0
+offset_right = 400.0
+offset_bottom = -68.0
+script = ExtResource("4_eml2x")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Cuaderno/Victoria/Reiniciar"]
+layout_mode = 0
+offset_right = 72.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Reiniciar
+"
+
+[node name="Derrota" type="Node2D" parent="Cuaderno"]
+position = Vector2(-2, -1)
+
+[node name="Cuaderno" type="Sprite2D" parent="Cuaderno/Derrota"]
+position = Vector2(566, -257)
+scale = Vector2(0.432552, 0.451389)
+texture = ExtResource("2_musda")
+
+[node name="Label" type="Label" parent="Cuaderno/Derrota"]
+offset_left = 619.0
+offset_top = -427.0
+offset_right = 902.0
+offset_bottom = -355.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Has perdido"
+horizontal_alignment = 1
+
+[node name="Razon" type="Label" parent="Cuaderno/Derrota"]
+offset_left = 618.0
+offset_top = -391.0
+offset_right = 901.0
+offset_bottom = -319.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Has perdido"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Victoria" type="Sprite2D" parent="Cuaderno/Derrota"]
+position = Vector2(769, -200.25)
+scale = Vector2(0.345477, 0.327454)
+texture = ExtResource("5_lh0mf")
+
+[node name="Reiniciar" type="TextureButton" parent="Cuaderno/Derrota"]
+offset_left = 329.0
+offset_top = -128.0
+offset_right = 406.0
+offset_bottom = -105.0
+script = ExtResource("4_eml2x")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Cuaderno/Derrota/Reiniciar"]
+layout_mode = 0
+offset_right = 72.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Reiniciar
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wv5oe")
+}
+
+[connection signal="mouse_entered" from="Cuaderno/Victoria/Reiniciar" to="Cuaderno/Victoria/Reiniciar" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Cuaderno/Victoria/Reiniciar" to="Cuaderno/Victoria/Reiniciar" method="_on_mouse_exited"]
+[connection signal="pressed" from="Cuaderno/Victoria/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="mouse_entered" from="Cuaderno/Derrota/Reiniciar" to="Cuaderno/Derrota/Reiniciar" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Cuaderno/Derrota/Reiniciar" to="Cuaderno/Derrota/Reiniciar" method="_on_mouse_exited"]
+[connection signal="pressed" from="Cuaderno/Derrota/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

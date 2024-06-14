@@ -1,0 +1,107 @@
+[gd_scene load_steps=8 format=3 uid="uid://c46lskuq1f43n"]
+
+[ext_resource type="Texture2D" uid="uid://tjcxvarjm5yg" path="res://Nuevo/Nuevo/Casa/libreta.png" id="1_an4e1"]
+[ext_resource type="Script" path="res://Scripts/NotasHogar/notas.gd" id="1_o60gn"]
+[ext_resource type="Texture2D" uid="uid://vykk6qji1pc5" path="res://Nuevo/Nuevo/Casa/boton touch.png" id="3_yj10j"]
+
+[sub_resource type="Animation" id="Animation_ytnve"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(589, 300)]
+}
+
+[sub_resource type="Animation" id="Animation_i8vxq"]
+resource_name = "baja"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(589, -233), Vector2(589, 300)]
+}
+
+[sub_resource type="Animation" id="Animation_pd6ei"]
+resource_name = "sube"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(589, 300), Vector2(589, -233)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u3i2t"]
+_data = {
+"RESET": SubResource("Animation_ytnve"),
+"baja": SubResource("Animation_i8vxq"),
+"sube": SubResource("Animation_pd6ei")
+}
+
+[node name="Notas" type="Node2D"]
+script = ExtResource("1_o60gn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(589, 300)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_an4e1")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -377.0
+offset_top = -205.0
+offset_right = 401.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Esta es tu casa, acogedora como cualquiera 
+que puedas costear"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="Sprite2D"]
+offset_left = 135.0
+offset_top = 175.0
+offset_right = 325.0
+offset_bottom = 250.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/TextureButton"]
+position = Vector2(97.4999, 39.9998)
+scale = Vector2(0.206089, 0.206089)
+texture = ExtResource("3_yj10j")
+
+[node name="Label" type="Label" parent="Sprite2D/TextureButton"]
+layout_mode = 0
+offset_right = 187.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 25
+text = "Observar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u3i2t")
+}
+
+[connection signal="mouse_entered" from="Sprite2D/TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D/TextureButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="Sprite2D/TextureButton" to="." method="_on_texture_button_pressed"]
