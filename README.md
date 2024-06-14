@@ -23,8 +23,10 @@ del proyecto, se subio a github, google drive, donde todos los archivos
 referentes al proyecto y el ejecutable pueden ser descargados desde la
 misma carpeta. La capsula en estos medios posee el proyecto en una 
 carpeta de nombre "Do Something", un ejecutable para el juego directo en
-Carpeta "Ejecutable" y un ejecutable del editor de godot para abrir 
-el proyecto y realizar revisiones de codigo y estructuracion.
+Carpeta "Ejecutable", el editor de proyecto es muy grande tanto para la
+entrega como para ser subido a github, por tanto se provee por este mismo medio
+un link https://godotengine.org/download/archive/4.1.1-stable/ del editor para 
+ver y abrir el proyecto para su revision.
 
 Para realizar revision de la ultima version del juego, abrir ejecutable
 "Do Something Juego", esta ejecutara el juego sin necesidad de comandos
