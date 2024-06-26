@@ -1,4 +1,13 @@
-Hola muy buenas tardes, este archivo detallara como revisar el software 
+Do Something actualmente es el Videojuego que se 
+utilizara como medio para optar al titulo Universitario en nuestra tesis de nombre "Mejoras de player experience “Do something”"
+donde yo y mi compañero realizamos pruebas heuristicas para llevar a cabo mejoras del software inicial hasta esta version.
+Realizado en godot 4.1.1
+
+Nombres de integrantes en este proyecto:
+Marcelo Azócar Madrid
+Brandon Baxter
+
+este archivo detallara las pautas como revisar el software 
 tanto para el ejecutable como para revision de codigo.
 
 Previamente a la utilizacion del software y revision,godot tiene requisitos
@@ -10,20 +19,21 @@ minimos para ejecutarse y poderse ver el proyecto.
 -sistema 64 bits
 
 En primera instancia se realizaron varias alternativas para el uso y apertura
-del proyecto,se subio a github, google drive y itch.io en los 
-cuales es preferible github y google drive, donde todos los archivos
+del proyecto, se subio a github, google drive, donde todos los archivos
 referentes al proyecto y el ejecutable pueden ser descargados desde la
 misma carpeta. La capsula en estos medios posee el proyecto en una 
-carpeta de nombre "Do Something", un ejecutable para el juego directo y 
-un ejecutable para abrir el proyecto y realizar revisiones de codigo y
-estructuracion.
+carpeta de nombre "Do Something", un ejecutable para el juego directo en
+Carpeta "Ejecutable", el editor de proyecto es muy grande tanto para la
+entrega como para ser subido a github, por tanto se provee por este mismo medio
+un link https://godotengine.org/download/archive/4.1.1-stable/ del editor para 
+ver y abrir el proyecto para su revision.
 
 Para realizar revision de la ultima version del juego, abrir ejecutable
 "Do Something Juego", esta ejecutara el juego sin necesidad de comandos
 adicionales en su version portable.
 
 Para realizar revision de codigo y estructuracion del proyecto, abrir
-"Godot 4.2" el cual abrira un Project Manager. desde aqui seguir paso a paso
+"Godot 4.1.1" el cual abrira un Project Manager. desde aqui seguir paso a paso
 -Hacer click en Import->Browse y se debe buscar la carpeta descargada
 -Abrir proyecto.gd el cual es una imagen del logotipo de godot, abrira 
 el proyecto con todas las pestañas desde la ultima modificacion.
@@ -46,8 +56,4 @@ El resto de carpetas son los recursos o imagenes asociadas y requeridas
 para el correcto funcionamiento del software, por tanto no deben ser
 movidas.
 
-
-No es recomendable para evaluar el codigo utilizar itch.io
-por privacidad de la misma pagina. 
-
-Mil Disculpas si no esta mayormente documentado, a solucionar si es posible.
+Mil Disculpas si no esta Debidamente documentado, a solucionar si es posible.
