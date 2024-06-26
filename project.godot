@@ -23,10 +23,14 @@ general/3d_panning_strength=0.26
 [autoload]
 
 Main="*res://Scripts/main.gd"
+Musica="*res://Scripts/Musica.gd"
+Ajustes="*res://Scenas/ajustes.gd"
 
 [display]
 
+window/size/initial_position_type=0
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [gui]
 

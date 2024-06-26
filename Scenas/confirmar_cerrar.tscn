@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://y3ry47jv6tt2"]
+
+[ext_resource type="Texture2D" uid="uid://ga5vjry4t6qp" path="res://Oficina/sketch1710816424286.png" id="1_c4q7w"]
+[ext_resource type="Script" path="res://Scripts/confirmar_cerrar.gd" id="1_mrpvn"]
+
+[sub_resource type="Animation" id="Animation_uhykh"]
+resource_name = "Bajada"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CerrarOpcion:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(501, -261), Vector2(501, 255)]
+}
+
+[sub_resource type="Animation" id="Animation_mrp76"]
+resource_name = "Subida"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CerrarOpcion:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(501, 255), Vector2(501, -261)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j8x87"]
+_data = {
+"Bajada": SubResource("Animation_uhykh"),
+"Subida": SubResource("Animation_mrp76")
+}
+
+[node name="Confirmar_Cerrar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mrpvn")
+
+[node name="CerrarOpcion" type="Sprite2D" parent="."]
+position = Vector2(501, -261)
+scale = Vector2(0.5765, 0.738333)
+texture = ExtResource("1_c4q7w")
+
+[node name="Salir" type="Button" parent="CerrarOpcion"]
+offset_left = 111.0
+offset_top = 79.0
+offset_right = 216.0
+offset_bottom = 121.0
+text = "Salir
+"
+
+[node name="NombreOpciones" type="Label" parent="CerrarOpcion"]
+offset_left = -246.314
+offset_top = -66.3657
+offset_right = 133.686
+offset_bottom = -12.3657
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Deseas Salir ?"
+
+[node name="AtrasCerrar" type="Button" parent="CerrarOpcion"]
+offset_left = -359.063
+offset_top = 77.201
+offset_right = -254.063
+offset_bottom = 119.201
+text = "Atras"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j8x87")
+}
+
+[connection signal="pressed" from="CerrarOpcion/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="CerrarOpcion/AtrasCerrar" to="." method="_on_atras_cerrar_pressed"]

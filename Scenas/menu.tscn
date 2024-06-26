@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cqhomqo6r0f6e"]
+[gd_scene load_steps=17 format=3 uid="uid://cqhomqo6r0f6e"]
 
 [ext_resource type="Texture2D" uid="uid://bdwpri50bus4d" path="res://Portada/fondos 1.png" id="1_xivd1"]
 [ext_resource type="Texture2D" uid="uid://byvbx0y4dxp6w" path="res://Portada/titulO.png" id="2_70dtt"]
@@ -6,12 +6,16 @@
 [ext_resource type="Script" path="res://Scripts/Tutorial/Configuracion.gd" id="3_vexik"]
 [ext_resource type="Texture2D" uid="uid://cypxd4bqtnidg" path="res://Portada/mona.png" id="4_sqyox"]
 [ext_resource type="Texture2D" uid="uid://bo3v27j2w3b0g" path="res://Portada/boton-removebg-preview.png" id="5_7i4yi"]
+[ext_resource type="Texture2D" uid="uid://cg4c7ahvowi6l" path="res://png-transparent-close-exit-stop-button-icon-thumbnail-removebg-preview.png" id="5_qyoj0"]
 [ext_resource type="Script" path="res://Scripts/Menu/Jugar.gd" id="6_yg3q7"]
 [ext_resource type="Texture2D" uid="uid://rah68ky4ialu" path="res://Portada/jugar.png" id="7_g8mcc"]
 [ext_resource type="Script" path="res://Scripts/Menu/Instrucciones.gd" id="8_1nue7"]
 [ext_resource type="Texture2D" uid="uid://ceklf1vhdll0h" path="res://Portada/instrucciones.png" id="8_eyxrp"]
 [ext_resource type="PackedScene" uid="uid://ddnxqev1n7im4" path="res://Scenas/transicion.tscn" id="10_ntdk1"]
 [ext_resource type="PackedScene" uid="uid://c5rgod6xv4q68" path="res://Scenas/ajustes.tscn" id="11_dnpy4"]
+[ext_resource type="PackedScene" uid="uid://c0f38xdriyroh" path="res://Scenas/seleccion_genero.tscn" id="13_0jc21"]
+[ext_resource type="PackedScene" uid="uid://bciljy3o2i441" path="res://Scenas/escena_tutorial.tscn" id="14_6wl1m"]
+[ext_resource type="PackedScene" uid="uid://y3ry47jv6tt2" path="res://Scenas/confirmar_cerrar.tscn" id="15_pxpsi"]
 
 [node name="Menu" type="Node2D"]
 
@@ -37,10 +41,36 @@ position = Vector2(60.642, 58.046)
 scale = Vector2(0.148373, 0.168992)
 texture = ExtResource("3_4y23w")
 
+[node name="BotonSalidaMenu" type="TextureButton" parent="Menu Principal/Titulo"]
+offset_left = 632.0
+offset_top = -599.0
+offset_right = 1008.0
+offset_bottom = -478.0
+
+[node name="Label" type="Label" parent="Menu Principal/Titulo/BotonSalidaMenu"]
+layout_mode = 0
+offset_left = 11.8177
+offset_top = 42.6037
+offset_right = 228.818
+offset_bottom = 121.604
+theme_override_font_sizes/font_size = 75
+text = "Salir"
+
+[node name="salir" type="Sprite2D" parent="Menu Principal/Titulo/BotonSalidaMenu"]
+position = Vector2(298.152, 79.6981)
+scale = Vector2(0.402507, 0.422464)
+texture = ExtResource("5_qyoj0")
+
 [node name="Mona" type="Sprite2D" parent="Menu Principal"]
 position = Vector2(13.4491, 132.559)
 scale = Vector2(0.908894, 0.782171)
 texture = ExtResource("4_sqyox")
+
+[node name="Ajustes" parent="." instance=ExtResource("11_dnpy4")]
+offset_left = 68.0
+offset_top = 4.0
+offset_right = 68.0
+offset_bottom = 4.0
 
 [node name="JugarButon" type="TextureButton" parent="."]
 offset_left = 53.0
@@ -75,13 +105,22 @@ position = Vector2(-36, -36)
 escenauno = "res://Scenas/seleccion_genero.tscn"
 escenados = "res://Scenas/instrucciones.tscn"
 
-[node name="Ajustes" parent="." instance=ExtResource("11_dnpy4")]
-offset_left = 68.0
-offset_top = 4.0
-offset_right = 68.0
-offset_bottom = 4.0
+[node name="Confirmar_Cerrar" parent="." instance=ExtResource("15_pxpsi")]
+offset_left = 55.0
+offset_top = -5.0
+offset_right = 55.0
+offset_bottom = -5.0
+
+[node name="SeleccionGenero" parent="." instance=ExtResource("13_0jc21")]
+visible = false
+
+[node name="EscenaTutorial" parent="." instance=ExtResource("14_6wl1m")]
+visible = false
+position = Vector2(758, 429)
+scale = Vector2(0.64, 0.639999)
 
 [connection signal="pressed" from="Menu Principal/Titulo/Configuracion" to="Ajustes" method="_on_configuracion_pressed"]
+[connection signal="pressed" from="Menu Principal/Titulo/BotonSalidaMenu" to="Confirmar_Cerrar" method="_on_boton_salida_menu_pressed"]
 [connection signal="mouse_entered" from="JugarButon" to="JugarButon" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="JugarButon" to="JugarButon" method="_on_mouse_exited"]
 [connection signal="play" from="JugarButon" to="Transicion" method="_on_jugar_buton_play"]

@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5rgod6xv4q68"]
+[gd_scene load_steps=9 format=3 uid="uid://c5rgod6xv4q68"]
 
 [ext_resource type="Script" path="res://Scenas/ajustes.gd" id="1_7cn53"]
 [ext_resource type="Texture2D" uid="uid://ga5vjry4t6qp" path="res://Oficina/sketch1710816424286.png" id="2_mayll"]
+[ext_resource type="Script" path="res://Scenas/Audio.gd" id="3_upg23"]
+[ext_resource type="AudioStream" uid="uid://bb3ae6lvsb8e4" path="res://Nuevo/Nuevo/Beneath-the-Mask-instrumental-version-_152kbit_Opus_.mp3" id="4_05882"]
+[ext_resource type="Script" path="res://Scripts/Musica.gd" id="5_y5lef"]
 
 [sub_resource type="Animation" id="Animation_bvrk7"]
 resource_name = "Bajada"
@@ -90,7 +93,10 @@ alignment = 1
 
 [node name="Audio" type="HSlider" parent="Opciones/Slicers"]
 layout_mode = 2
+max_value = 1.0
+step = 0.001
 tick_count = 10
+script = ExtResource("3_upg23")
 
 [node name="CheckButton" type="CheckButton" parent="Opciones/Slicers"]
 layout_mode = 2
@@ -110,6 +116,11 @@ libraries = {
 "": SubResource("AnimationLibrary_udsmd")
 }
 
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_05882")
+autoplay = true
+script = ExtResource("5_y5lef")
+
 [connection signal="pressed" from="Opciones/Atras" to="." method="_on_atras_pressed"]
-[connection signal="value_changed" from="Opciones/Slicers/Audio" to="." method="_on_audio_value_changed"]
+[connection signal="value_changed" from="Opciones/Slicers/Audio" to="Opciones/Slicers/Audio" method="_on_value_changed"]
 [connection signal="toggled" from="Opciones/Slicers/CheckButton" to="." method="_on_check_button_toggled"]

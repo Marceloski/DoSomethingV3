@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bciljy3o2i441"]
+[gd_scene load_steps=26 format=3 uid="uid://bciljy3o2i441"]
 
 [ext_resource type="Texture2D" uid="uid://cq5tb3yb2j307" path="res://Oficina/sketch1704247249518.png" id="1_2407r"]
 [ext_resource type="Texture2D" uid="uid://cr1thl56jcmdn" path="res://Oficina/sketch1704247207412.png" id="2_4s4x8"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://cp5esvm6yjs4a" path="res://Nuevo/Nuevo/Oficina/Marcadores.png" id="8_nerb2"]
 [ext_resource type="Texture2D" uid="uid://btmkg2cctfu6j" path="res://Oficina/sketch1704247405312.png" id="9_7tfyn"]
 [ext_resource type="Texture2D" uid="uid://cbqrqlphecpgb" path="res://Nuevo/moneda.png" id="9_7vgq6"]
+[ext_resource type="Texture2D" uid="uid://dinrushjah7qh" path="res://Portada/conf..png" id="9_846jq"]
+[ext_resource type="Script" path="res://Scenas/ConfiguracionTutorial.gd" id="9_yrrb6"]
 [ext_resource type="Texture2D" uid="uid://c1fcmdd0csy8t" path="res://Oficina/sketch1704247394680.png" id="10_rq2fd"]
 [ext_resource type="Texture2D" uid="uid://ctidibxtjiipj" path="res://Nuevo/empleados.png" id="10_tpcge"]
 [ext_resource type="Texture2D" uid="uid://db57v2mbphrp0" path="res://Oficina/png-transparent-arrow-show-turn-symbol-direction-right-next-characters-icons-indicator-removebg-preview.png" id="11_deja2"]
@@ -21,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://ed40d0mj4yja" path="res://Nuevo/felicidad 2.png" id="18_x55xx"]
 [ext_resource type="Texture2D" uid="uid://b2obb4n2as2ct" path="res://Nuevo/felicidad 3.png" id="19_88yb8"]
 [ext_resource type="Texture2D" uid="uid://cynco34lntpm4" path="res://Nuevo/felicidad 1.png" id="20_0yp16"]
+[ext_resource type="PackedScene" uid="uid://c5rgod6xv4q68" path="res://Scenas/ajustes.tscn" id="22_dmss3"]
 
 [sub_resource type="Theme" id="Theme_aflhn"]
 
@@ -59,6 +62,12 @@ position = Vector2(361.905, 45.5324)
 scale = Vector2(1.43828, 1.38422)
 texture = ExtResource("6_d7mgt")
 
+[node name="Ajustes" parent="Escenario" instance=ExtResource("22_dmss3")]
+offset_left = 68.0
+offset_top = 4.0
+offset_right = 68.0
+offset_bottom = 4.0
+
 [node name="TextoNubes" type="Node2D" parent="."]
 
 [node name="NubeSecretaria" type="Sprite2D" parent="TextoNubes"]
@@ -84,6 +93,18 @@ autowrap_mode = 2
 position = Vector2(177.307, 386.8)
 scale = Vector2(1.10267, 1.24503)
 texture = ExtResource("8_nerb2")
+
+[node name="ConfiguracionTutorial" type="TextureButton" parent="TextoNubes/NubeSecretaria/Marcadores"]
+offset_left = -994.06
+offset_top = -552.941
+offset_right = -888.06
+offset_bottom = -453.941
+script = ExtResource("9_yrrb6")
+
+[node name="Configuracion" type="Sprite2D" parent="TextoNubes/NubeSecretaria/Marcadores/ConfiguracionTutorial"]
+position = Vector2(60.642, 58.046)
+scale = Vector2(0.148373, 0.168992)
+texture = ExtResource("9_846jq")
 
 [node name="LabelsStats" type="Node2D" parent="TextoNubes"]
 
@@ -233,6 +254,8 @@ position = Vector2(298, 605)
 scale = Vector2(0.13, 0.13)
 texture = ExtResource("20_0yp16")
 
+[connection signal="pressed" from="TextoNubes/NubeSecretaria/Marcadores/ConfiguracionTutorial" to="Escenario/Ajustes" method="_on_configuracion_tutorial_pressed"]
+[connection signal="pressed" from="TextoNubes/NubeSecretaria/Marcadores/ConfiguracionTutorial" to="TextoNubes/NubeSecretaria/Marcadores/ConfiguracionTutorial" method="_on_pressed"]
 [connection signal="timeout" from="Flechas/TimerParpadeo" to="Flechas/Flecha Icono" method="_on_timer_parpadeo_timeout"]
 [connection signal="timeout" from="Flechas/TimerParpadeo" to="Flechas/Flecha Dialogo" method="_on_timer_parpadeo_timeout"]
 [connection signal="timeout" from="Flechas/TimerParpadeo" to="Flechas/Flecha Ganacia" method="_on_timer_parpadeo_timeout"]

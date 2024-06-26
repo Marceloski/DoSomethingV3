@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://p1pal4dl1tbd"]
+[gd_scene load_steps=27 format=3 uid="uid://p1pal4dl1tbd"]
 
 [ext_resource type="Texture2D" uid="uid://cs77xvvdp0vua" path="res://Nuevo/Nuevo/Casa/el sentado.png" id="1_jtw00"]
 [ext_resource type="Script" path="res://Scripts/Hogar/hogar.gd" id="1_mkn6h"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c3xck85673jps" path="res://Nuevo/Nuevo/Casa/niño.png" id="3_e8k2g"]
 [ext_resource type="Script" path="res://Scripts/Hogar/Jugador.gd" id="4_dpxa4"]
 [ext_resource type="Texture2D" uid="uid://d0gqtv2ev0mtc" path="res://Casa/sketch1707923670512.png" id="5_2o3t6"]
+[ext_resource type="Texture2D" uid="uid://cg4c7ahvowi6l" path="res://png-transparent-close-exit-stop-button-icon-thumbnail-removebg-preview.png" id="5_vt3mo"]
 [ext_resource type="Texture2D" uid="uid://lymttr88a873" path="res://Casa/sketch1707923731963.png" id="6_l02fb"]
 [ext_resource type="Texture2D" uid="uid://ciqmfjepfstsj" path="res://Casa/sketch1710813572183.png" id="7_y5isj"]
 [ext_resource type="Texture2D" uid="uid://bcogeva2p8p6i" path="res://Casa/sketch1710813621120.png" id="8_gbued"]
@@ -21,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://r0shwnnniqwb" path="res://Nuevo/Nuevo/Casa/corazon 1.png" id="17_nogx7"]
 [ext_resource type="PackedScene" uid="uid://c46lskuq1f43n" path="res://Scenas/notas.tscn" id="18_pdmte"]
 [ext_resource type="Texture2D" uid="uid://vykk6qji1pc5" path="res://Nuevo/Nuevo/Casa/boton touch.png" id="20_2iq71"]
+[ext_resource type="PackedScene" uid="uid://y3ry47jv6tt2" path="res://Scenas/confirmar_cerrar.tscn" id="22_3qprt"]
 
 [sub_resource type="Animation" id="Animation_cmpoi"]
 length = 0.001
@@ -74,6 +76,17 @@ texture = ExtResource("2_hfcgm")
 [node name="Jugador" type="Node2D" parent="."]
 position = Vector2(-541, 49)
 script = ExtResource("4_dpxa4")
+
+[node name="SalidaOficina" type="TextureButton" parent="Jugador"]
+offset_left = 1503.0
+offset_top = -49.0
+offset_right = 1694.0
+offset_bottom = 24.0
+
+[node name="salir" type="Sprite2D" parent="Jugador/SalidaOficina"]
+position = Vector2(152.713, 38.8047)
+scale = Vector2(0.198404, 0.201085)
+texture = ExtResource("5_vt3mo")
 
 [node name="H" type="Sprite2D" parent="Jugador"]
 visible = false
@@ -154,6 +167,12 @@ texture = ExtResource("16_h8rai")
 texture = ExtResource("17_nogx7")
 
 [node name="Notas" parent="." instance=ExtResource("18_pdmte")]
+
+[node name="Confirmar_Cerrar" parent="." instance=ExtResource("22_3qprt")]
+offset_left = 88.0
+offset_top = 1.0
+offset_right = 88.0
+offset_bottom = 1.0
 
 [node name="TextureButton" type="TextureButton" parent="."]
 offset_left = 956.0

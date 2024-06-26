@@ -56,6 +56,30 @@ position = Vector2(-534.722, 118.154)
 scale = Vector2(0.324617, 0.335204)
 texture = ExtResource("2_1sbxo")
 
+[node name="Felicidad1" type="Sprite2D" parent="Fondo"]
+position = Vector2(-269.097, 415.384)
+scale = Vector2(0.430556, 0.46523)
+texture = ExtResource("11_sx4mo")
+
+[node name="Moneda" type="Sprite2D" parent="Fondo"]
+position = Vector2(-15.625, 420.923)
+scale = Vector2(0.517361, 0.56123)
+texture = ExtResource("12_vydxy")
+
+[node name="Empleados" type="Sprite2D" parent="Fondo"]
+position = Vector2(222.222, 402.461)
+scale = Vector2(0.4375, 0.424615)
+texture = ExtResource("13_f82a0")
+
+[node name="Label" type="Label" parent="Fondo"]
+offset_left = -785.0
+offset_top = -506.0
+offset_right = -256.0
+offset_bottom = -368.0
+theme_override_font_sizes/font_size = 36
+text = "Clickea y toma desiciones, pero todo tendra consecuencias en tus recursos"
+autowrap_mode = 3
+
 [node name="Instrucciones" type="TextureButton" parent="."]
 offset_left = 58.864
 offset_top = 494.94
@@ -89,31 +113,6 @@ frame = 1
 position = Vector2(-42, -28)
 escenauno = "res://Scenas/seleccion_genero.tscn"
 escenados = "res://Scenas/menu.tscn"
-
-[node name="Label" type="Label" parent="."]
-offset_left = 92.0
-offset_top = 31.0
-offset_right = 450.0
-offset_bottom = 151.0
-theme_override_font_sizes/font_size = 26
-text = "Clickea y toma desiciones, pero todo tendra consecuencias en tus recursos"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Felicidad1" type="Sprite2D" parent="."]
-position = Vector2(421, 550)
-scale = Vector2(0.248, 0.252)
-texture = ExtResource("11_sx4mo")
-
-[node name="Moneda" type="Sprite2D" parent="."]
-position = Vector2(567, 553)
-scale = Vector2(0.298, 0.304)
-texture = ExtResource("12_vydxy")
-
-[node name="Empleados" type="Sprite2D" parent="."]
-position = Vector2(704, 543)
-scale = Vector2(0.252, 0.23)
-texture = ExtResource("13_f82a0")
 
 [connection signal="mouse_entered" from="Instrucciones" to="Instrucciones" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Instrucciones" to="Instrucciones" method="_on_mouse_exited"]
